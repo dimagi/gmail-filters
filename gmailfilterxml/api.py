@@ -2,7 +2,8 @@ from . import xmlschemas
 
 
 class GmailFilterSet(object):
-    def __init__(self, author_name, author_email, updated_timestamp, filters=None):
+    def __init__(self, author_name, author_email, updated_timestamp,
+                 filters=None):
         self.author_name = author_name
         self.author_email = author_email
         self.updated_timestamp = updated_timestamp
@@ -11,15 +12,21 @@ class GmailFilterSet(object):
     def to_xml(self):
         updated = self.updated_timestamp.strftime("%Y-%m-%dT%H:%M:%SZ")
 
+        def yield_properties():
+            if gmail_filter.from_:
+                yield 'from', gmail_filter.from_
+            if gmail_filter.label:
+                yield 'label', gmail_filter.label
+            if gmail_filter.should_archive:
+                yield 'shouldArchive', 'true'
+
         entries = [
             xmlschemas.Entry(
-                id='tag:mail.google.com,2008:filter:{}'.format(gmail_filter.id),
+                id=('tag:mail.google.com,2008:filter:{}'
+                    .format(gmail_filter.id)),
                 updated=updated,
-                properties=filter(None, [
-                    xmlschemas.EntryProperty(name='from', value=gmail_filter.from_) if gmail_filter.from_ else None,
-                    xmlschemas.EntryProperty(name='label', value=gmail_filter.label) if gmail_filter.label else None,
-                    xmlschemas.EntryProperty(name='shouldArchive', value='true') if gmail_filter.should_archive else None,
-                ])
+                properties=[xmlschemas.EntryProperty(name=name, value=value)
+                            for name, value in yield_properties()]
             )
             for gmail_filter in self.filters
         ]
@@ -28,7 +35,9 @@ class GmailFilterSet(object):
             author_name=self.author_name,
             author_email=self.author_email,
             updated=updated,
-            id='tag:mail.google.com,2008:filters:{}'.format(','.join(gmail_filter.id for gmail_filter in self.filters)),
+            id=('tag:mail.google.com,2008:filters:{}'
+                .format(','.join(gmail_filter.id
+                                 for gmail_filter in self.filters))),
             entries=entries
         )
 

@@ -1,1 +1,1 @@
-eulxml
+eulxml==0.21.1
