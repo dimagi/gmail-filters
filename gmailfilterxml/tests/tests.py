@@ -23,10 +23,12 @@ class SingleFilterTest(XmlTest):
 
     def test_api(self):
         filter_set = FilterSet(author_name='Danny Roberts', author_email='droberts@dimagi.com',
-                               updated_timestamp=datetime.datetime(2014, 9, 19, 17, 40, 28))
-        filter_set.filters.append(GmailFilter(from_='noreply@github.com', label='github', should_archive=True))
-        # ...
-        self.assertEqual(filter_set.to_xml(), self.expected_xml)
+                               updated_timestamp=datetime.datetime(2014, 9, 19, 17, 40, 28),
+                               filters=[
+                                   GmailFilter(id='1286460749536', from_='noreply@github.com', label='github',
+                                               should_archive=True)
+                               ])
+        self.assertXmlEqual(filter_set.to_xml(), self.expected_xml)
 
     def test_schema(self):
         updated = datetime.datetime(2014, 9, 19, 17, 40, 28).strftime("%Y-%m-%dT%H:%M:%SZ")
