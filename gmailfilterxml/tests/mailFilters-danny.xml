@@ -1,0 +1,711 @@
+<?xml version='1.0' encoding='UTF-8'?><feed xmlns='http://www.w3.org/2005/Atom' xmlns:apps='http://schemas.google.com/apps/2006'>
+	<title>Mail Filters</title>
+	<id>tag:mail.google.com,2008:filters:1286460749536,1301418362291,1311264218436,1328530638969,1328531606815,1328531987415,1334695361272,1339518042838,1344957779523,1345135109593,1348163295797,1357167883807,1361290450763,1361375386891,1364330212484,1368101513770,1369199766942,1369201335559,1369230533920,1383134580199,1383135189830,1383135315107,1383136604908,1383213181442,1383554713304,1383554745854,1383565608544,1383580144651,1383653236554,1383734177270,1384155338534,1384398254855,1386595581624,1386595911921,1386596327622,1386691201549,1386691261354,1386691261371,1386691981113,1386692761541,1386692761577,1386693193648,1387315396215,1393441905180,1397149236854,1398354077759,1399296559142,1400187629377,1401981814313,1402415738400,1406134816759,1406137622806,1406405464337,1407252794687,1407252853043,1407856891904,1408972823205,1409677450717,1409677572066,1410187839011,1410643590000,1410721335116,1410721365117,1410743795723</id>
+	<updated>2014-09-19T17:40:28Z</updated>
+	<author>
+		<name>Danny Roberts</name>
+		<email>droberts@dimagi.com</email>
+	</author>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1286460749536</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='noreply@github.com'/>
+		<apps:property name='label' value='github'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1301418362291</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='uptime OR alert@pingdom.com'/>
+		<apps:property name='label' value='Uptime'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1311264218436</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='reports@dimagi.com'/>
+		<apps:property name='label' value='FogBugz'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1328530638969</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='subject' value='BlueChips'/>
+		<apps:property name='label' value='BlueChips'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1328531606815</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='post@dimagidev.posterous.com'/>
+		<apps:property name='label' value='Dimagi Knowledge'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1328531987415</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@dimagi.com'/>
+		<apps:property name='subject' value='[wvmoz]'/>
+		<apps:property name='label' value='wvmoz'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1334695361272</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='subject' value='FogBugz Job Applicants'/>
+		<apps:property name='label' value='Job Applicants'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1339518042838</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='fogbugz-noreply@dimagi.com'/>
+		<apps:property name='hasTheWord' value='AND &quot;was assigned to you&quot; AND Daniel Roberts'/>
+		<apps:property name='label' value='Action Ticket'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1344957779523</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='subject' value='&quot;[Commcare-hq Alert]&quot;'/>
+		<apps:property name='label' value='Commcare-hq Alert'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1345135109593</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='hasTheWord' value='ResourceConflict &quot;Document update conflict&quot;'/>
+		<apps:property name='label' value='HQ 500/ResourceConflict'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1348163295797</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='commcarehq-dev+rs-notifications@dimagi.com'/>
+		<apps:property name='label' value='HQ 500/Rackspace'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1357167883807</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='hasTheWord' value='GreenletExit label:hq-500'/>
+		<apps:property name='label' value='HQ 500/GreenletExit'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1361290450763</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='commcare-dev@dimagi.com'/>
+		<apps:property name='label' value='Action Ticket'/>
+		<apps:property name='shouldMarkAsRead' value='true'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1361375386891</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='hasTheWord' value='&quot;You can merge this Pull Request by running&quot;'/>
+		<apps:property name='label' value='Pull Requests'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1364330212484</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='noreply@dimagi.com'/>
+		<apps:property name='hasTheWord' value='[HQ Apache Err]'/>
+		<apps:property name='label' value='Apache'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1368101513770</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='hasTheWord' value='Danny OR &quot;Assigned To:  Daniel Roberts&quot;'/>
+		<apps:property name='label' value='Mention'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1369199766942</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='commcarehq-dev+newdomain@dimagi.com'/>
+		<apps:property name='subject' value='New Domain OR New Project'/>
+		<apps:property name='label' value='New Domain'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1369201335559</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='dev+uservoice@dimagi.com'/>
+		<apps:property name='label' value='User Voice'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1369230533920</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='commcarehq-dev@dimagi.com'/>
+		<apps:property name='subject' value='Preindex Complete'/>
+		<apps:property name='label' value='Preindex Complete'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1383134580199</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='fogbugz+noreply@dimagi.com'/>
+		<apps:property name='to' value='droberts@dimagi.com'/>
+		<apps:property name='subject' value='FogBugz'/>
+		<apps:property name='label' value='FBz Mention'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1383135189830</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='commcarehq-support@dimagi.com'/>
+		<apps:property name='hasTheWord' value='Thank you for your support'/>
+		<apps:property name='label' value='FBz Created'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1383135315107</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='fogbugz-noreply@dimagi.com'/>
+		<apps:property name='label' value='FBz Reminder'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1383136604908</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='fogbugz-noreply@dimagi.com'/>
+		<apps:property name='subject' value='FogBugz (Case'/>
+		<apps:property name='doesNotHaveTheWord' value='Job Applicants'/>
+		<apps:property name='label' value='FBz Inquiries'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1383213181442</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='commcarehq-noreply+staging-hqdb-ubuntu@dimagi.com'/>
+		<apps:property name='to' value='commcarehq-dev@dimagi.com'/>
+		<apps:property name='hasTheWord' value='[preview] Deploy successful'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1383554713304</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='commcarehq-dev@dimagi.com'/>
+		<apps:property name='hasTheWord' value='AttributeError: &apos;NoneType&apos; object has no attribute &apos;replace&apos;'/>
+		<apps:property name='label' value='skip'/>
+		<apps:property name='shouldMarkAsRead' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1383554745854</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='hasTheWord' value='XPathTypeMismatchException'/>
+		<apps:property name='label' value='skip'/>
+		<apps:property name='shouldMarkAsRead' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1383565608544</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='noreply@dimagi.com'/>
+		<apps:property name='hasTheWord' value='Pillowtop put_robust error'/>
+		<apps:property name='label' value='skip'/>
+		<apps:property name='shouldMarkAsRead' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1383580144651</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='droberts@dimagi.com'/>
+		<apps:property name='label' value='PR Mention'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1383653236554</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='fogbugz+noreply@dimagi.com'/>
+		<apps:property name='subject' value='FogBugz (Case)'/>
+		<apps:property name='hasTheWord' value='has been resolved'/>
+		<apps:property name='label' value='Resolved'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1383734177270</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='commcarehq-noreply+jenkins@dimagi.com'/>
+		<apps:property name='label' value='Jenkins'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1384155338534</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='jenkins'/>
+		<apps:property name='to' value='dev+build-notifications@dimagi.com'/>
+		<apps:property name='label' value='Jenkins'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1384398254855</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='commcarehq-noreply'/>
+		<apps:property name='to' value='commcarehq-dev@dimagi.com'/>
+		<apps:property name='hasTheWord' value='production error'/>
+		<apps:property name='label' value='HQ 500'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1386595581624</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='commcarehq-noreply+hqdjango3@dimagi.com OR commcarehq-noreply+hqdjango4@dimagi.com OR commcarehq-noreply+hqdjango5@dimagi.com'/>
+		<apps:property name='to' value='commcarehq-ops@dimagi.com'/>
+		<apps:property name='label' value='HQ 500'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1386595911921</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='inquiries@dimagi.com'/>
+		<apps:property name='subject' value='&quot;New project space&quot;'/>
+		<apps:property name='label' value='New Domain'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1386596327622</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='commcarehq-ops@dimagi.com'/>
+		<apps:property name='hasTheWord' value='RequestFailed timeout reason'/>
+		<apps:property name='label' value='Couch Timeout'/>
+		<apps:property name='shouldMarkAsRead' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1386691201549</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='commcarehq-noreply+staging-hqdb-ubuntu@dimagi.com'/>
+		<apps:property name='to' value='commcarehq-ops@dimagi.com'/>
+		<apps:property name='hasTheWord' value='celery'/>
+		<apps:property name='label' value='Staging Celery'/>
+		<apps:property name='shouldMarkAsRead' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1386691261354</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='commcarehq-dev+staging-notifications-hqdjango2@dimagi.com'/>
+		<apps:property name='label' value='Staging 500'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1386691261371</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='commcarehq-noreply+staging-hqdjango0@dimagi.com OR commcarehq-noreply+staging-hqdjango1@dimagi.com OR commcarehq-noreply+staging-hqdjango3@dimagi.com'/>
+		<apps:property name='to' value='commcarehq-ops@dimagi.com'/>
+		<apps:property name='label' value='Staging 500'/>
+		<apps:property name='shouldMarkAsRead' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1386691981113</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@dimagi.com'/>
+		<apps:property name='to' value='commcarehq-dev@dimagi.com'/>
+		<apps:property name='subject' value='jenkins'/>
+		<apps:property name='label' value='Jenkins'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1386692761541</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='commcarehq-dev+india-notifications@dimagi.com'/>
+		<apps:property name='label' value='India 500'/>
+		<apps:property name='shouldArchive' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1386692761577</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='commcarehq-noreply+dimagi@dimagi.com'/>
+		<apps:property name='subject' value='&quot;india&quot; &quot;internal server error&quot;'/>
+		<apps:property name='hasTheWord' value='AND'/>
+		<apps:property name='label' value='India 500'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1386693193648</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='subject' value='&quot;Deploy Successful&quot;'/>
+		<apps:property name='label' value='Deploy Successful'/>
+		<apps:property name='shouldMarkAsRead' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1387315396215</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='commcarehq-ops@dimagi.com'/>
+		<apps:property name='subject' value='preindex_everything OR &quot;pillow preindexing&quot;'/>
+		<apps:property name='label' value='Preindex'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1393441905180</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='devops@dimagi.com'/>
+		<apps:property name='doesNotHaveTheWord' value='&quot;Rackspace Cloud&quot; &quot;New Relic&quot;'/>
+		<apps:property name='label' value='Devops'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1397149236854</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='hasTheWord' value='to:(admin@dimagi.com) OR to:ops@dimagi.com'/>
+		<apps:property name='label' value='Admin'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1398354077759</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='information@dimagi.com'/>
+		<apps:property name='doesNotHaveTheWord' value='thawte'/>
+		<apps:property name='label' value='Information'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1399296559142</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='commcare-users@googlegroups.com'/>
+		<apps:property name='label' value='CommCare Users'/>
+		<apps:property name='shouldMarkAsRead' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1400187629377</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='it@dimagi.com'/>
+		<apps:property name='label' value='IT'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1401981814313</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='commcarehq-noreply+hqcelery1@dimagi.com'/>
+		<apps:property name='to' value='commcarehq-ops@dimagi.com'/>
+		<apps:property name='label' value='HQ Celery'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1402415738400</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='hasTheWord' value='to:field-reports@googlegroups.com OR to:field-reports@dimagi.com'/>
+		<apps:property name='label' value='Field Reports'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1406134816759</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='fogbugz+noreply@dimagi.com'/>
+		<apps:property name='to' value='inquiries@dimagi.com'/>
+		<apps:property name='subject' value='FogBugz'/>
+		<apps:property name='label' value='FBz Inquiries'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1406137622806</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='fogbugz+noreply@dimagi.com'/>
+		<apps:property name='to' value='commcarehq-dev@dimagi.com'/>
+		<apps:property name='subject' value='FogBugz'/>
+		<apps:property name='label' value='FBz HQ Dev'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1406405464337</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='fogbugz@dimagi.com'/>
+		<apps:property name='to' value='vellum-dev@dimagi.com'/>
+		<apps:property name='label' value='FBz Vellum'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1407252794687</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='reports@dimagi.com'/>
+		<apps:property name='subject' value='TimeCard -ethan -emord -cory'/>
+		<apps:property name='label' value='TimeCards'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1407252853043</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='reports@dimagi.com'/>
+		<apps:property name='subject' value='TimeCard'/>
+		<apps:property name='label' value='TimeCards'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1407856891904</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='FogBugz Time Reports'/>
+		<apps:property name='label' value='TimeCards'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1408972823205</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='allstaff@dimagi.com'/>
+		<apps:property name='subject' value='New Project'/>
+		<apps:property name='label' value='New Project'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1409677450717</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='noreply@newrelic.com'/>
+		<apps:property name='label' value='New Relic'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1409677572066</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='alerts@cloudmonitoring.rackspace.com'/>
+		<apps:property name='label' value='Rackspace Alert'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1410187839011</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='&quot;fogbugz notifier&quot; &quot;fogbugz-noreply@dimagi.com&quot;'/>
+		<apps:property name='doesNotHaveTheWord' value='&quot;danny roberts&quot; &quot;ethan soergel&quot; &quot;noah callahan&quot;'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1410643590000</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='commcarehq-noreply+sentry@dimagi.com'/>
+		<apps:property name='label' value='500 Sentry'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1410721335116</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@dimagi.com'/>
+		<apps:property name='subject' value='[Django] [celery@b]'/>
+		<apps:property name='label' value='HQ Celery'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1410721365117</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@dimagi.com OR noreply@dimagi.com OR commcarehq-noreply1@dimagi.com OR commcarehq-noreply2@dimagi.com'/>
+		<apps:property name='subject' value='[Django]'/>
+		<apps:property name='doesNotHaveTheWord' value='[celery@'/>
+		<apps:property name='label' value='HQ 500'/>
+		<apps:property name='shouldNeverSpam' value='true'/>
+		<apps:property name='shouldAlwaysMarkAsImportant' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<id>tag:mail.google.com,2008:filter:1410743795723</id>
+		<updated>2014-09-19T17:40:28Z</updated>
+		<content></content>
+		<apps:property name='to' value='commcarehq-ops@dimagi.com'/>
+		<apps:property name='label' value='Server'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+</feed>
