@@ -1,7 +1,7 @@
 from . import xmlschemas
 
 
-class FilterSet(object):
+class GmailFilterSet(object):
     def __init__(self, author_name, author_email, updated_timestamp, filters=None):
         self.author_name = author_name
         self.author_email = author_email
