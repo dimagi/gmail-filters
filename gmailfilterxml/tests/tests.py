@@ -59,3 +59,14 @@ class SingleFilterTest(XmlTest):
             entries=entries
         )
         self.assertXmlEqual(feed.serializeDocument(), self.expected_xml)
+
+
+class FilterValidationTest(unittest.TestCase):
+    def test(self):
+        with self.assertRaises(TypeError):
+            GmailFilter(id='1234567890123', xyz=123)
+        with self.assertRaises(TypeError):
+            GmailFilter(xyz=123)
+        with self.assertRaises(AssertionError):
+            GmailFilter(from_='github@dimagi.com')
+        GmailFilter(id='1234567890123', from_='github@dimagi.com')
