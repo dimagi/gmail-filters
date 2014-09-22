@@ -3,7 +3,7 @@ import unittest
 import datetime
 from lxml.doctestcompare import LXMLOutputChecker
 from doctest import Example
-from gmailfilterxml.api import FilterSet, GmailFilter
+from gmailfilterxml.api import GmailFilterSet, GmailFilter
 from gmailfilterxml.xmlschemas import Feed, Entry, EntryProperty
 
 
@@ -22,12 +22,19 @@ class SingleFilterTest(XmlTest):
             self.expected_xml = f.read()
 
     def test_api(self):
-        filter_set = FilterSet(author_name='Danny Roberts', author_email='droberts@dimagi.com',
-                               updated_timestamp=datetime.datetime(2014, 9, 19, 17, 40, 28),
-                               filters=[
-                                   GmailFilter(id='1286460749536', from_='noreply@github.com', label='github',
-                                               should_archive=True)
-                               ])
+        filter_set = GmailFilterSet(
+            author_name='Danny Roberts',
+            author_email='droberts@dimagi.com',
+            updated_timestamp=datetime.datetime(2014, 9, 19, 17, 40, 28),
+            filters=[
+                GmailFilter(
+                    id='1286460749536',
+                    from_='noreply@github.com',
+                    label='github',
+                    should_archive=True,
+                )
+            ]
+        )
         self.assertXmlEqual(filter_set.to_xml(), self.expected_xml)
 
     def test_schema(self):
@@ -52,5 +59,3 @@ class SingleFilterTest(XmlTest):
             entries=entries
         )
         self.assertXmlEqual(feed.serializeDocument(), self.expected_xml)
-
-
