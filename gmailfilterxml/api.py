@@ -23,7 +23,6 @@ class GmailFilterSet(object):
         self.filters = filters if filters is not None else []
 
     def to_xml(self):
-        updated = self.updated_timestamp.strftime("%Y-%m-%dT%H:%M:%SZ")
 
         def yield_properties(g):
             for xml_name, py_name, py_type in PROPERTIES:
@@ -36,9 +35,8 @@ class GmailFilterSet(object):
 
         entries = [
             xmlschemas.Entry(
-                id=('tag:mail.google.com,2008:filter:{}'
-                    .format(gmail_filter.id)),
-                updated=updated,
+                id=gmail_filter.id,
+                updated=self.updated_timestamp,
                 properties=[xmlschemas.EntryProperty(name=name, value=value)
                             for name, value in yield_properties(gmail_filter)]
             )
@@ -48,11 +46,9 @@ class GmailFilterSet(object):
         feed = xmlschemas.Feed(
             author_name=self.author_name,
             author_email=self.author_email,
-            updated=updated,
-            id=('tag:mail.google.com,2008:filters:{}'
-                .format(','.join(gmail_filter.id
-                                 for gmail_filter in self.filters))),
-            entries=entries
+            updated=self.updated_timestamp,
+            ids=[gmail_filter.id for gmail_filter in self.filters],
+            entries=entries,
         )
 
         return feed.serializeDocument()
@@ -69,9 +65,7 @@ class GmailFilter(object):
                 "__init__() got an unexpected keyword argument '{}'"
                 .format(list(unknown_kwargs)[0])
             )
-        assert isinstance(id, basestring)
-        assert len(id) == 13
-        assert all(c in '0123456789' for c in id)
+        xmlschemas.validate_entry_id(id)
         self.id = id
 
         for xml_name, py_name, py_type in PROPERTIES:

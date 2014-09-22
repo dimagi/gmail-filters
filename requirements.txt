@@ -1,1 +1,2 @@
-eulxml==0.21.1
+# eulxml==0.21.1
+git+git://github.com/dannyroberts/eulxml.git@ac205937#egg=eulxml

@@ -5,6 +5,7 @@ from lxml.doctestcompare import LXMLOutputChecker
 from doctest import Example
 from gmailfilterxml.api import GmailFilterSet, GmailFilter
 from gmailfilterxml.xmlschemas import Feed, Entry, EntryProperty
+from eulxml.xmlmap import load_xmlobject_from_string
 
 
 class XmlTest(unittest.TestCase):
@@ -38,11 +39,11 @@ class SingleFilterTest(XmlTest):
         self.assertXmlEqual(filter_set.to_xml(), self.expected_xml)
 
     def test_schema(self):
-        updated = datetime.datetime(2014, 9, 19, 17, 40, 28).strftime("%Y-%m-%dT%H:%M:%SZ")
+        updated = datetime.datetime(2014, 9, 19, 17, 40, 28)
 
         entries = [
             Entry(
-                id='tag:mail.google.com,2008:filter:1286460749536',
+                id='1286460749536',
                 updated=updated,
                 properties=[
                     EntryProperty(name='from', value='noreply@github.com'),
@@ -55,7 +56,7 @@ class SingleFilterTest(XmlTest):
             author_name='Danny Roberts',
             author_email='droberts@dimagi.com',
             updated=updated,
-            id='tag:mail.google.com,2008:filters:1286460749536',
+            ids=['1286460749536'],
             entries=entries
         )
         self.assertXmlEqual(feed.serializeDocument(), self.expected_xml)
@@ -70,3 +71,22 @@ class FilterValidationTest(unittest.TestCase):
         with self.assertRaises(AssertionError):
             GmailFilter(from_='github@dimagi.com')
         GmailFilter(id='1234567890123', from_='github@dimagi.com')
+
+
+class ReadXMLFileTest(XmlTest):
+    @classmethod
+    def setUpClass(self):
+        with open(os.path.join(os.path.dirname(__file__), 'many-filters.xml')) as f:
+            self.many_filters_xml = f.read()
+        with open(os.path.join(os.path.dirname(__file__), 'single-filter.xml')) as f:
+            self.single_filter_xml = f.read()
+
+    def _test_round_trip(self, xml):
+        feed = load_xmlobject_from_string(xml, Feed)
+        self.assertXmlEqual(feed.serializeDocument(), xml)
+
+    def test_many_filters_round_trip(self):
+        self._test_round_trip(self.many_filters_xml)
+
+    def test_single_filter_round_trip(self):
+        self._test_round_trip(self.single_filter_xml)
