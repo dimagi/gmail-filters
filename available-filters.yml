@@ -40,7 +40,8 @@ recipes:
     # each one of these represents a "filter" as it's presented to the user
     # but they may create any number of actual gmail filters
     # in order to get that single conceptual job done
-    Timecards:
+    -
+        label: Timecards
         id: 000001
         options:
             -
@@ -57,7 +58,8 @@ recipes:
             -
                 subject: '{% for name in names %}-"{{ name }}" {% endfor %}'
                 should_archive: true
-    Pingdom:
+    -
+        label: Pingdom
         id: 000002
         options:
             - archive
@@ -65,7 +67,8 @@ recipes:
             from: alert@pingdom.com
         filters:
             - label: Pingdom
-    FogBugz Job Applicants:
+    -
+        label: FogBugz Job Applicants
         id: 000003
         options:
             - archive
@@ -73,7 +76,8 @@ recipes:
             to: jobslisteners@dimagi.com
         filters:
             - label: Job Applicants
-    Uservoice:
+    -
+        label: Uservoice
         id: 000004
         options:
             - archive
@@ -81,7 +85,8 @@ recipes:
             to: dev+uservoice@dimagi.com
         filters:
             - label: UserVoice
-    Server Emails:
+    -
+        label: Server Emails
         id: 000005
         options:
             - archive
@@ -89,7 +94,8 @@ recipes:
             to: commcarehq-ops@dimagi.com
         filters:
             - label: Server
-    Travis Notifications:
+    -
+        label: Travis Notifications
         id: 000006
         options:
             - archive
@@ -97,13 +103,15 @@ recipes:
             from: notifications@travis-ci.org
         filters:
             - label: Travis
-    Office:
+    -
+        label: Office
         id: 000007
         match:
             to: office@dimagi.com
         filters:
             - label: Office
-    CommCare Users:
+    -
+        label: CommCare Users
         id: 000008
         options:
             - archive
@@ -111,26 +119,30 @@ recipes:
             to: commcare-users@googlegroups.com
         filters:
             - label: CommCare Users
-    From a Dimagi person:
+    -
+        label: From a Dimagi person
         id: 000009
         match:
             from: "*@dimagi.com -commcarehq -fogbugz -devops -notifications -ops"
         filters:
             - label: ♥︎
-    Project Reports:
+    -
+        label: Project Reports
         id: 000010
         match:
             to: project-reports@dimagi.com
         filters:
             - label: Project Reports
-    Information:
+    -
+        label: Information
         id: 000011
         match:
             to: "information@dimagi.com OR info@dimagi.com"
         filters:
             - label: Information
             - does_not_have_the_word: '{% for keyword in keywords %}"{{ keyword }}" {% endfor %}'
-    Allstaff:
+    -
+        label: Allstaff
         id: 000012
         match:
             to: allstaff@dimagi.com
