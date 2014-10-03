@@ -1,12 +1,12 @@
 from . import xmlschemas
 
 PROPERTIES = (
-    ('from', 'from_', str),
-    ('subject', 'subject', str),
-    ('hasTheWord', 'has_the_word', str),
-    ('to', 'to', str),
-    ('doesNotHaveTheWord', 'does_not_have_the_word', str),
-    ('label', 'label', str),
+    ('from', 'from_', basestring),
+    ('subject', 'subject', basestring),
+    ('hasTheWord', 'has_the_word', basestring),
+    ('to', 'to', basestring),
+    ('doesNotHaveTheWord', 'does_not_have_the_word', basestring),
+    ('label', 'label', basestring),
     ('shouldArchive', 'should_archive', bool),
     ('shouldMarkAsRead', 'should_mark_as_read', bool),
     ('shouldNeverSpam', 'should_never_spam', bool),

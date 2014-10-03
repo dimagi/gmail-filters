@@ -17,15 +17,17 @@
 # Not sure if I'm missing some semantics here, since that seems really odd,
 # and renders this whole id thing useless.
 
-id_prefix: 346244
+id_prefix: '346244'
 options:
     # you can list options here that you want to be globally available
     # for any of the filter "recipes" below to reference
     # (this does not mean they actually show up on every filter)
-    keywords:
+    -
+        key: keywords
         label: "What keywords do you want to see in your inbox?"
         type: list
-    archive:
+    -
+        key: archive
         label: Do you want to see these in your inbox?
         # inverted bool means checked => false, unchecked => true
         type: inverted-bool
@@ -35,15 +37,15 @@ options:
             # (in the case of a bool, only if the bool is true)
             -
                 to: -me
-                should_archive: true
+                shouldArchive: true
 recipes:
     # each one of these represents a "filter" as it's presented to the user
     # but they may create any number of actual gmail filters
     # in order to get that single conceptual job done
     -
         label: Timecards
-        id: 000001
-        options:
+        id: '000001'
+        custom_options:
             -
                 key: names
                 label: "Whose timecards do you want to see? (List first or last names as they appear in fogbugz)"
@@ -57,10 +59,10 @@ recipes:
             - label: Timecard
             -
                 subject: '{% for name in names %}-"{{ name }}" {% endfor %}'
-                should_archive: true
+                shouldArchive: true
     -
         label: Pingdom
-        id: 000002
+        id: '000002'
         options:
             - archive
         match:
@@ -69,7 +71,7 @@ recipes:
             - label: Pingdom
     -
         label: FogBugz Job Applicants
-        id: 000003
+        id: '000003'
         options:
             - archive
         match:
@@ -78,7 +80,7 @@ recipes:
             - label: Job Applicants
     -
         label: Uservoice
-        id: 000004
+        id: '000004'
         options:
             - archive
         match:
@@ -87,7 +89,7 @@ recipes:
             - label: UserVoice
     -
         label: Server Emails
-        id: 000005
+        id: '000005'
         options:
             - archive
         match:
@@ -96,7 +98,7 @@ recipes:
             - label: Server
     -
         label: Travis Notifications
-        id: 000006
+        id: '000006'
         options:
             - archive
         match:
@@ -105,14 +107,14 @@ recipes:
             - label: Travis
     -
         label: Office
-        id: 000007
+        id: '000007'
         match:
             to: office@dimagi.com
         filters:
             - label: Office
     -
         label: CommCare Users
-        id: 000008
+        id: '000008'
         options:
             - archive
         match:
@@ -121,29 +123,29 @@ recipes:
             - label: CommCare Users
     -
         label: From a Dimagi person
-        id: 000009
+        id: '000009'
         match:
             from: "*@dimagi.com -commcarehq -fogbugz -devops -notifications -ops"
         filters:
             - label: ♥︎
     -
         label: Project Reports
-        id: 000010
+        id: '000010'
         match:
             to: project-reports@dimagi.com
         filters:
             - label: Project Reports
     -
         label: Information
-        id: 000011
+        id: '000011'
         match:
             to: "information@dimagi.com OR info@dimagi.com"
         filters:
             - label: Information
-            - does_not_have_the_word: '{% for keyword in keywords %}"{{ keyword }}" {% endfor %}'
+            - doesNotHaveTheWord: '{% for keyword in keywords %}"{{ keyword }}" {% endfor %}'
     -
         label: Allstaff
-        id: 000012
+        id: '000012'
         match:
             to: allstaff@dimagi.com
         filters:
