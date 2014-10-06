@@ -1,0 +1,152 @@
+# Every gmail filter has its own 13-character numerical id.
+# In order to support a download-edit-reupload workflow,
+# it's important that the same conceptual filters always use the same ids.
+# Thus, we use the following scheme to construct an id
+# <6-digit id_prefix> + <6-digit recipe id> + <index of filter within recipe>
+#
+# When the program receives a downloaded xml file,
+# all filters starting with id_prefix
+# are presumed to be managed by the program.
+# Since I don't think gmail filter uplaod supports deleting filters,
+# filters the program believes should be deleted on update
+# will be written out as empty filters, i.e. filters that perform no action
+# that way, they user can manually delete them if they wish.
+#
+# I just did a preliminary check, and it seems that there's...
+# ...no way to even _replace_ a given filter through a gmail upload.
+# Not sure if I'm missing some semantics here, since that seems really odd,
+# and renders this whole id thing useless.
+
+id_prefix: '346244'
+options:
+    # you can list options here that you want to be globally available
+    # for any of the filter "recipes" below to reference
+    # (this does not mean they actually show up on every filter)
+    -
+        key: keywords
+        label: "What keywords do you want to see in your inbox?"
+        type: list
+    -
+        key: archive
+        label: Do you want to see these in your inbox?
+        # inverted bool means checked => false, unchecked => true
+        type: inverted-bool
+        filters:
+            # when a recipe uses an option that has a 'filters' property
+            # these filters are added to the recipe's filters
+            # (in the case of a bool, only if the bool is true)
+            -
+                to: -me
+                shouldArchive: true
+recipes:
+    # each one of these represents a "filter" as it's presented to the user
+    # but they may create any number of actual gmail filters
+    # in order to get that single conceptual job done
+    -
+        label: Timecards
+        id: '000001'
+        custom_options:
+            -
+                key: names
+                label: "Whose timecards do you want to see? (List first or last names as they appear in fogbugz)"
+                type: list
+        # all the filter properties included in match
+        # are applied to every single one of the filters below
+        match:
+            from: reports@dimagi.com
+        filters:
+            # one gmail filter is created per item in this list
+            - label: Timecard
+            -
+                subject: '{% for name in names %}-"{{ name }}" {% endfor %}'
+                shouldArchive: true
+    -
+        label: Pingdom
+        id: '000002'
+        options:
+            - archive
+        match:
+            from: alert@pingdom.com
+        filters:
+            - label: Pingdom
+    -
+        label: FogBugz Job Applicants
+        id: '000003'
+        options:
+            - archive
+        match:
+            to: jobslisteners@dimagi.com
+        filters:
+            - label: Job Applicants
+    -
+        label: Uservoice
+        id: '000004'
+        options:
+            - archive
+        match:
+            to: dev+uservoice@dimagi.com
+        filters:
+            - label: UserVoice
+    -
+        label: Server Emails
+        id: '000005'
+        options:
+            - archive
+        match:
+            to: commcarehq-ops@dimagi.com
+        filters:
+            - label: Server
+    -
+        label: Travis Notifications
+        id: '000006'
+        options:
+            - archive
+        match:
+            from: notifications@travis-ci.org
+        filters:
+            - label: Travis
+    -
+        label: Office
+        id: '000007'
+        match:
+            to: office@dimagi.com
+        filters:
+            - label: Office
+    -
+        label: CommCare Users
+        id: '000008'
+        options:
+            - archive
+        match:
+            to: commcare-users@googlegroups.com
+        filters:
+            - label: CommCare Users
+    -
+        label: From a Dimagi person
+        id: '000009'
+        match:
+            from: "*@dimagi.com -commcarehq -fogbugz -devops -notifications -ops"
+        filters:
+            - label: ♥︎
+    -
+        label: Project Reports
+        id: '000010'
+        match:
+            to: project-reports@dimagi.com
+        filters:
+            - label: Project Reports
+    -
+        label: Information
+        id: '000011'
+        match:
+            to: "information@dimagi.com OR info@dimagi.com"
+        filters:
+            - label: Information
+            - doesNotHaveTheWord: '{% for keyword in keywords %}"{{ keyword }}" {% endfor %}'
+    -
+        label: Allstaff
+        id: '000012'
+        match:
+            to: allstaff@dimagi.com
+        filters:
+            - label: Allstaff
