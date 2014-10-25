@@ -22,7 +22,7 @@ class GmailFilterSet(object):
         self.updated_timestamp = updated_timestamp
         self.filters = filters if filters is not None else []
 
-    def to_xml(self):
+    def to_xml(self, **kwargs):
 
         def yield_properties(g):
             for xml_name, py_name, py_type in PROPERTIES:
@@ -51,7 +51,7 @@ class GmailFilterSet(object):
             entries=entries,
         )
 
-        return feed.serializeDocument()
+        return feed.serializeDocument(**kwargs)
 
 
 class GmailFilter(object):
