@@ -7,8 +7,8 @@ class Base(jsonobject.JsonObject):
 
 
 FILTER_KEY_TO_TYPE = {
-    xml_name: py_type
-    for xml_name, py_name, py_type in gmailfilterxml.PROPERTIES
+    name: py_type
+    for name, py_type in gmailfilterxml.PROPERTIES
 }
 
 
