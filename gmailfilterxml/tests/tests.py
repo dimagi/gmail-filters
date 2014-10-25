@@ -32,7 +32,7 @@ class SingleFilterTest(XmlTest):
                     id='1286460749536',
                     from_='noreply@github.com',
                     label='github',
-                    should_archive=True,
+                    shouldArchive=True,
                 )
             ]
         )
