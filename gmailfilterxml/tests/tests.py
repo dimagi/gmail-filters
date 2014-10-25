@@ -1,20 +1,10 @@
 import os
 import unittest
 import datetime
-from lxml.doctestcompare import LXMLOutputChecker
-from doctest import Example
 from gmailfilterxml.api import GmailFilterSet, GmailFilter
 from gmailfilterxml.xmlschemas import Feed, Entry, EntryProperty
 from eulxml.xmlmap import load_xmlobject_from_string
-
-
-class XmlTest(unittest.TestCase):
-    """http://stackoverflow.com/a/7060342"""
-    def assertXmlEqual(self, got, want):
-        checker = LXMLOutputChecker()
-        if not checker.check_output(want, got, 0):
-            message = checker.output_difference(Example("", want), got, 0)
-            raise AssertionError(message)
+from utils.unittest import XmlTest
 
 
 class SingleFilterTest(XmlTest):
