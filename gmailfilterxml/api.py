@@ -75,3 +75,20 @@ class GmailFilter(object):
                 kwargs[name] = kwargs.get(name) or False
                 assert isinstance(kwargs[name], bool)
             setattr(self, name, kwargs.pop(name, None))
+
+    def __eq__(self, other):
+        return self.id == other.id and all(
+            getattr(self, name, None) == getattr(other, name, None)
+            for name, _ in PROPERTIES
+        )
+
+    def __repr__(self):
+        return '{}(id={}, {})'.format(
+            self.__class__.__name__,
+            repr(self.id),
+            ', '.join(
+                '{}={}'.format(name, repr(getattr(self, name, None)))
+                for name, _ in PROPERTIES
+                if getattr(self, name, None) is not None
+            )
+        )
