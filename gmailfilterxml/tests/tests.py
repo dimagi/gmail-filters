@@ -51,6 +51,43 @@ class SingleFilterTest(XmlTest):
         )
         self.assertXmlEqual(feed.serializeDocument(), self.expected_xml)
 
+    def test_multiple_entries_init(self):
+        """
+        This is a regression test.
+        There used to be a problem with initializing a feed
+        with multiple entries
+
+        """
+        updated = datetime.datetime(2014, 9, 19, 17, 40, 28)
+        entries = [
+            Entry(
+                id='1286460749536',
+                updated=updated,
+                properties=[
+                    EntryProperty(name='from', value='noreply@github.com'),
+                    EntryProperty(name='label', value='github'),
+                    EntryProperty(name='shouldArchive', value='true'),
+                ]
+            ),
+            Entry(
+                id='1286460749537',
+                updated=updated,
+                properties=[
+                    EntryProperty(name='from', value='noreply@github.com'),
+                    EntryProperty(name='label', value='github'),
+                    EntryProperty(name='shouldArchive', value='true'),
+                ]
+            ),
+        ]
+        feed = Feed(
+            author_name='Danny Roberts',
+            author_email='droberts@dimagi.com',
+            updated=updated,
+            ids=['1286460749536', '1286460749537'],
+            entries=entries,
+        )
+        self.assertEqual(feed.entries, entries)
+
 
 class FilterValidationTest(unittest.TestCase):
     def test(self):
