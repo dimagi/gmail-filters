@@ -1,4 +1,5 @@
 import jsonobject
+from jsonobject.base_properties import DefaultProperty
 import gmailfilterxml
 
 
@@ -51,3 +52,47 @@ class RecipeSet(Base):
     id_prefix = jsonobject.StringProperty(validators=_id_prefix_valid)
     options = jsonobject.ListProperty(RecipeOption)
     recipes = jsonobject.ListProperty(Recipe)
+
+
+# User* are the above classes with user's responses
+
+class UserRecipeOption(RecipeOption):
+    value = DefaultProperty()
+
+
+class UserRecipe(Recipe):
+    selected = jsonobject.BooleanProperty()
+    options = jsonobject.ListProperty(UserRecipeOption)
+    custom_options = None
+
+
+class UserRecipeSet(RecipeSet):
+    options = None
+    recipes = jsonobject.ListProperty(UserRecipe)
+
+    @classmethod
+    def from_recipe_set(cls, recipe_set):
+        options_by_key = {option.key: option for option in recipe_set.options}
+
+        def get_default_value(type):
+            return {'inverted-bool': lambda: True, 'list': list}[type]()
+        return UserRecipeSet(
+            id_prefix=recipe_set.id_prefix,
+            recipes=[
+                UserRecipe(
+                    selected=True,
+                    label=recipe.label,
+                    id=recipe.id,
+                    options=[
+                        UserRecipeOption(value=get_default_value(option.type),
+                                         **option.to_json())
+                        for option in (
+                            recipe.custom_options
+                            + [options_by_key[key] for key in recipe.options]
+                        )
+                    ],
+                    match=recipe.match,
+                    filters=recipe.filters,
+                ) for recipe in recipe_set.recipes
+            ],
+        )

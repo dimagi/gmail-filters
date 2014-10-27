@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<atom:feed xmlns:apps="http://schemas.google.com/apps/2006" xmlns:atom="http://www.w3.org/2005/Atom">
+  <atom:title>Mail Filters</atom:title>
+  <atom:id>tag:mail.google.com,2008:filters:3462440000010,3462440000011,3462440000020,3462440000021,3462440000030,3462440000031,3462440000040,3462440000041,3462440000050,3462440000051,3462440000060,3462440000061,3462440000070,3462440000080,3462440000081,3462440000090,3462440000100,3462440000110,3462440000111,3462440000120</atom:id>
+  <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+  <atom:author>
+    <atom:name></atom:name>
+    <atom:email></atom:email>
+  </atom:author>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000010</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="from" value="reports@dimagi.com"/>
+    <apps:property name="label" value="Timecard"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000011</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="from" value="reports@dimagi.com"/>
+    <apps:property name="shouldArchive" value="true"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000020</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="from" value="alert@pingdom.com"/>
+    <apps:property name="label" value="Pingdom"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000021</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="from" value="alert@pingdom.com"/>
+    <apps:property name="to" value="-me"/>
+    <apps:property name="shouldArchive" value="true"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000030</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="to" value="jobslisteners@dimagi.com"/>
+    <apps:property name="label" value="Job Applicants"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000031</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="to" value="-me AND jobslisteners@dimagi.com"/>
+    <apps:property name="shouldArchive" value="true"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000040</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="to" value="dev+uservoice@dimagi.com"/>
+    <apps:property name="label" value="UserVoice"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000041</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="to" value="-me AND dev+uservoice@dimagi.com"/>
+    <apps:property name="shouldArchive" value="true"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000050</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="to" value="commcarehq-ops@dimagi.com"/>
+    <apps:property name="label" value="Server"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000051</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="to" value="-me AND commcarehq-ops@dimagi.com"/>
+    <apps:property name="shouldArchive" value="true"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000060</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="from" value="notifications@travis-ci.org"/>
+    <apps:property name="label" value="Travis"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000061</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="from" value="notifications@travis-ci.org"/>
+    <apps:property name="to" value="-me"/>
+    <apps:property name="shouldArchive" value="true"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000070</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="to" value="office@dimagi.com"/>
+    <apps:property name="label" value="Office"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000080</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="to" value="commcare-users@googlegroups.com"/>
+    <apps:property name="label" value="CommCare Users"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000081</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="to" value="-me AND commcare-users@googlegroups.com"/>
+    <apps:property name="shouldArchive" value="true"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000090</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="from" value="*@dimagi.com -commcarehq -fogbugz -devops -notifications -ops"/>
+    <apps:property name="label" value="♥︎"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000100</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="to" value="project-reports@dimagi.com"/>
+    <apps:property name="label" value="Project Reports"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000110</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="to" value="information@dimagi.com OR info@dimagi.com"/>
+    <apps:property name="label" value="Information"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000111</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="to" value="information@dimagi.com OR info@dimagi.com"/>
+  </atom:entry>
+  <atom:entry>
+    <atom:category term="filter"/>
+    <atom:title>Mail Filter</atom:title>
+    <atom:id>tag:mail.google.com,2008:filter:3462440000120</atom:id>
+    <atom:updated>2014-10-27T02:20:58Z</atom:updated>
+    <atom:content></atom:content>
+    <apps:property name="to" value="allstaff@dimagi.com"/>
+    <apps:property name="label" value="Allstaff"/>
+  </atom:entry>
+</atom:feed>

@@ -44,8 +44,8 @@ class GmailFilterSet(object):
         ]
 
         feed = xmlschemas.Feed(
-            author_name=self.author_name,
-            author_email=self.author_email,
+            author_name=self.author_name or '',
+            author_email=self.author_email or '',
             updated=self.updated_timestamp,
             ids=[gmail_filter.id for gmail_filter in self.filters],
             entries=entries,

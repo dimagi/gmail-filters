@@ -1,0 +1,142 @@
+id_prefix: '346244'
+options: []
+recipes:
+- custom_options: []
+  filters:
+  - {label: Timecard}
+  - {shouldArchive: true, subject: '{% for name in names %}-"{{ name }}" {% endfor %}'}
+  id: '000001'
+  label: Timecards
+  match: {from: reports@dimagi.com}
+  options:
+  - filters: []
+    key: names
+    label: Whose timecards do you want to see? (List first or last names as they appear in fogbugz)
+    type: list
+    value: []
+  selected: true
+- custom_options: []
+  filters:
+  - {label: Pingdom}
+  id: '000002'
+  label: Pingdom
+  match: {from: alert@pingdom.com}
+  options:
+  - filters:
+    - {shouldArchive: true, to: -me}
+    key: archive
+    label: Do you want to see these in your inbox?
+    type: inverted-bool
+    value: true
+  selected: true
+- custom_options: []
+  filters:
+  - {label: Job Applicants}
+  id: '000003'
+  label: FogBugz Job Applicants
+  match: {to: jobslisteners@dimagi.com}
+  options:
+  - filters:
+    - {shouldArchive: true, to: -me}
+    key: archive
+    label: Do you want to see these in your inbox?
+    type: inverted-bool
+    value: true
+  selected: true
+- custom_options: []
+  filters:
+  - {label: UserVoice}
+  id: '000004'
+  label: Uservoice
+  match: {to: dev+uservoice@dimagi.com}
+  options:
+  - filters:
+    - {shouldArchive: true, to: -me}
+    key: archive
+    label: Do you want to see these in your inbox?
+    type: inverted-bool
+    value: true
+  selected: true
+- custom_options: []
+  filters:
+  - {label: Server}
+  id: '000005'
+  label: Server Emails
+  match: {to: commcarehq-ops@dimagi.com}
+  options:
+  - filters:
+    - {shouldArchive: true, to: -me}
+    key: archive
+    label: Do you want to see these in your inbox?
+    type: inverted-bool
+    value: true
+  selected: true
+- custom_options: []
+  filters:
+  - {label: Travis}
+  id: '000006'
+  label: Travis Notifications
+  match: {from: notifications@travis-ci.org}
+  options:
+  - filters:
+    - {shouldArchive: true, to: -me}
+    key: archive
+    label: Do you want to see these in your inbox?
+    type: inverted-bool
+    value: true
+  selected: true
+- custom_options: []
+  filters:
+  - {label: Office}
+  id: '000007'
+  label: Office
+  match: {to: office@dimagi.com}
+  options: []
+  selected: true
+- custom_options: []
+  filters:
+  - {label: CommCare Users}
+  id: 000008
+  label: CommCare Users
+  match: {to: commcare-users@googlegroups.com}
+  options:
+  - filters:
+    - {shouldArchive: true, to: -me}
+    key: archive
+    label: Do you want to see these in your inbox?
+    type: inverted-bool
+    value: true
+  selected: true
+- custom_options: []
+  filters:
+  - {label: "\u2665\uFE0E"}
+  id: 000009
+  label: From a Dimagi person
+  match: {from: '*@dimagi.com -commcarehq -fogbugz -devops -notifications -ops'}
+  options: []
+  selected: true
+- custom_options: []
+  filters:
+  - {label: Project Reports}
+  id: '000010'
+  label: Project Reports
+  match: {to: project-reports@dimagi.com}
+  options: []
+  selected: true
+- custom_options: []
+  filters:
+  - {label: Information}
+  - {doesNotHaveTheWord: '{% for keyword in keywords %}"{{ keyword }}" {% endfor %}'}
+  id: '000011'
+  label: Information
+  match: {to: information@dimagi.com OR info@dimagi.com}
+  options: []
+  selected: true
+- custom_options: []
+  filters:
+  - {label: Allstaff}
+  id: '000012'
+  label: Allstaff
+  match: {to: allstaff@dimagi.com}
+  options: []
+  selected: true
