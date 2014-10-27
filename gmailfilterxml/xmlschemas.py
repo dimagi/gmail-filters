@@ -116,7 +116,7 @@ class Feed(OrderedXmlObject):
     updated = UTCDateTimeField('atom:updated')
     author_name = StringField('atom:author/atom:name')
     author_email = StringField('atom:author/atom:email')
-    entries = NodeListField('entry', Entry)
+    entries = NodeListField('atom:entry', Entry)
 
     def __init__(self, node=None, context=None, **kwargs):
         if node is None and 'title' not in kwargs:
