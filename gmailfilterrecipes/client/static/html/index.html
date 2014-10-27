@@ -1,0 +1,69 @@
+<!doctype html>
+<html ng-app="recipesApp">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  </head>
+  <body>
+    <div ng-controller="RecipesController" class="container">
+      <div class="page-header">
+        <h1>Gmail Filters</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-bordered table-striped">
+            <tr>
+              <td>
+                  Select
+                  <div class="btn-group">
+                    <button class="btn btn-xs btn-default" ng-click="selectAll(true)">All</button>
+                    <button class="btn btn-xs btn-default" ng-click="selectAll(false)">None</button>
+                  </div>
+
+              </td>
+              <th>Recipe</th>
+              <th>Options</th>
+              <!--<th>Option Values</th>-->
+            </tr>
+            <tr ng-repeat="recipe in recipeSet.recipes">
+              <td>
+                  <input type="checkbox" ng-model="recipe.selected"/>
+              </td>
+              <td>{{ recipe.label }}</td>
+              <td>
+                <ul class="list-unstyled">
+                  <li ng-repeat="option in recipe.options">
+                    <span ng-if="option.type == 'inverted-bool'">
+                      <input id="option-{{ recipe.id }}-{{ $index }}"
+                             type="checkbox" ng-model="option.value" ng-true-value="false" ng-false-value="true"/>
+                    </span>
+                    <label for="option-{{ recipe.id }}-{{ $index }}">{{ option.label }}</label>
+                    <span ng-if="option.type == 'list'">
+                      <input id="option-{{ recipe.id }}-{{ $index }}" type="text" ng-model="option.value" ng-list/>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+              <!--<td>-->
+                <!--<ul class="list-unstyled">-->
+                  <!--<li ng-repeat="option in recipe.options">{{ option.key }}: {{ option.value }}</li>-->
+                <!--</ul>-->
+              <!--</td>-->
+            </tr>
+          </table>
+        </div>
+      </div>
+      <form action="/filters.xml" method="post">
+          <input type="hidden" ng-value="recipeSet | json" name="recipeSet"/>
+          <div class="btn-group">
+            <button type="button" ng-click="refreshFiltersXml()" class="btn btn-default">Preview</button>
+            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-download"></span> Download</button>
+          </div>
+      </form>
+      <hr/>
+      <pre ng-if="filtersXml">{{ filtersXml }}</pre>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+    <script src="/static/coffee/recipes.js"></script>
+  </body>
+</html>

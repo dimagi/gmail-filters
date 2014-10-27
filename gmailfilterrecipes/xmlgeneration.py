@@ -1,11 +1,26 @@
-from . import jsonschemas
 from collections import defaultdict
+import datetime
 import jinja2
 from gmailfilterrecipes.jsonschemas import FILTER_KEY_TO_TYPE
-from gmailfilterxml import GmailFilter
+from gmailfilterxml import GmailFilter, GmailFilterSet
 
 
-def generate_gmail_filters(recipe, options, option_values, id_prefix):
+def generate_gmail_fitler_set(user_recipe_set, author_name=None,
+                              author_email=None, updated_timestamp=None):
+    gmail_filters = []
+    for recipe in user_recipe_set.recipes:
+        if recipe.selected:
+            gmail_filters.extend(
+                generate_gmail_filters(recipe, user_recipe_set.id_prefix))
+    return GmailFilterSet(
+        author_name=author_name,
+        author_email=author_email,
+        updated_timestamp=updated_timestamp or datetime.datetime.utcnow(),
+        filters=gmail_filters,
+    )
+
+
+def generate_gmail_filters(user_recipe, id_prefix):
     """
     Args:
         recipe (jsonschema.Recipe)
@@ -13,19 +28,19 @@ def generate_gmail_filters(recipe, options, option_values, id_prefix):
         option_values (dict of string => string)
     """
 
-    options_by_key = {option.key: option for option in options}
-    all_options = ([options_by_key[option_key]
-                    for option_key in recipe.options] + recipe.custom_options)
-    match = recipe.match
-    filters = list(recipe.filters)
+    match = user_recipe.match
+    filters = list(user_recipe.filters)
 
-    for option in all_options:
-        if option.filters and option_values.get(option.key):
+    for option in user_recipe.options:
+        if option.filters and option.value:
             filters.extend(option.filters)
+
+    option_values = {option.key: option.value
+                     for option in user_recipe.options}
 
     gmail_filters = []
     for i, filter in enumerate(filters):
-        id = '{}{}{}'.format(id_prefix, recipe.id, i)
+        id = '{}{}{}'.format(id_prefix, user_recipe.id, i)
         kwargs = defaultdict(list)
         for key, value in filter.items() + match.items():
             if isinstance(value, basestring):

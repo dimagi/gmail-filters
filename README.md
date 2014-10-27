@@ -7,11 +7,32 @@ To install requirements:
 
 ```bash
 pip install -r requirements.txt
+npm install -g coffee-script
 ```
 
-## Usage
+## Compile Coffee
 
-Create a simple gmail filter:
+```bash
+coffee --compile gmailfilterrecipes/client/static/coffee/*.coffee
+```
+
+
+## Run
+
+Just run
+
+```bash
+python run_server.py
+```
+
+and the web frontend should be running at http://localhost:8080/.
+
+## Library Usage
+
+If you aren't interested in the front end, you can use `gmailfilterxml`
+as a library for reading and writing gmail filter xml files.
+
+To create a simple gmail filter:
 
 ```python
 >>> from gmailfilterxml import GmailFilterSet, GmailFilter
