@@ -5,6 +5,9 @@ import yaml
 from gmailfilterrecipes.jsonschemas import UserRecipeSet, RecipeSet
 from gmailfilterrecipes.xmlgeneration import generate_gmail_fitler_set
 
+app = bottle.default_app()
+
+app.config.load_config('settings.ini')
 
 @bottle.route('/')
 def index():
@@ -14,7 +17,8 @@ def index():
 
 @bottle.route('/filters.json')
 def filters_json():
-    with open('gmailfilterrecipes/tests/available-filters.yml') as f:
+    filters_yml = app.config.get('gmailfilterrecipes.filters_yml')
+    with open(filters_yml) as f:
         filters = yaml.load(f)
     user_recipe_set = UserRecipeSet.from_recipe_set(RecipeSet.wrap(filters))
     return json.dumps(user_recipe_set.to_json())
