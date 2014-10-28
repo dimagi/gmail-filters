@@ -138,6 +138,8 @@ recipes:
     -
         label: Information
         id: '000011'
+        options:
+          - keywords
         match:
             to: "information@dimagi.com OR info@dimagi.com"
         filters:
