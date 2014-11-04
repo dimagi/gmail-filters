@@ -82,7 +82,7 @@ class UserRecipeSet(RecipeSet):
                 UserRecipe(
                     selected=True,
                     label=recipe.label,
-                    id=recipe.id,
+                    id=recipe.id or "{0:06d}".format(i),
                     options=[
                         UserRecipeOption(value=get_default_value(option.type),
                                          **option.to_json())
@@ -93,6 +93,6 @@ class UserRecipeSet(RecipeSet):
                     ],
                     match=recipe.match,
                     filters=recipe.filters,
-                ) for recipe in recipe_set.recipes
+                ) for i, recipe in enumerate(recipe_set.recipes)
             ],
         )
