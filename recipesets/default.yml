@@ -1,0 +1,193 @@
+id_prefix: '346244'
+options:
+    -
+        key: keywords
+        label: "What keywords do you want to see in your inbox?"
+        type: list
+    -
+        key: archive
+        label: Do you want to see these in your inbox?
+        type: inverted-bool
+        filters:
+            -
+                to: -me
+                shouldArchive: true
+    -
+        key: mark_read
+        label: Mark as READ?
+        type: bool
+        filters:
+            - shouldMarkAsRead: true
+recipes:
+    -
+        label: Mails directly to me
+        custom_options:
+            -
+                key: names
+                label: "List your email addresses"
+                type: list
+        match:
+            to: "{{ names|join(' OR ') }}"
+        filters:
+            - label: =^.^=
+              shouldNeverSpam: true
+              shouldAlwaysMarkAsImportant: true
+    -
+        label: Timecards
+        custom_options:
+            -
+                key: names
+                label: "Whose timecards do you want to see? (List first or last names as they appear in fogbugz)"
+                type: list
+        match:
+            from: reports@dimagi.com
+        filters:
+            - label: Timecard
+            -
+                subject: '{% for name in names %}-"{{ name }}" {% endfor %}'
+                shouldArchive: true
+    -
+        label: Pingdom
+        options:
+            - archive
+            - mark_read
+        match:
+            from: alert@pingdom.com
+        filters:
+            - label: Pingdom
+    -
+        label: Fogbugz Cases
+        custom_options:
+            -
+                key: names
+                label: "Your full name as it appears in FogBugz"
+                type: list
+        match:
+            from: 'fogbugz-noreply@dimagi.com OR fogbugz+noreply@dimagi.com'
+        filters:
+            - label: FogBugz
+            - label: My Cases
+              hasTheWord: "'{{ names|join('\\' OR \\'') }}'"
+            - hasTheWord: "resolved -('{{ names|join('\\' OR \\'') }}')"
+              shouldArchive: true
+              shouldMarkAsRead: true
+            - hasTheWord: "-('{{ names|join('\\' OR \\'') }}')"
+              shouldNeverMarkAsImportant: true
+    -
+        label: Job Applicants
+        options:
+            - archive
+        match:
+            to: jobslisteners@dimagi.com
+        filters:
+            - label: Job Applicants
+    -
+        label: Uservoice
+        options:
+            - archive
+        match:
+            to: dev+uservoice@dimagi.com
+        filters:
+            - label: UserVoice
+    -
+        label: Server Emails
+        options:
+            - archive
+            - mark_read
+        match:
+            to: commcarehq-ops@dimagi.com
+        filters:
+            - label: Server
+    -
+        label: Travis Notifications
+        match:
+            from: notifications@travis-ci.org
+        filters:
+            - label: Travis
+            - subject: '[Passed]'
+              shouldNeverMarkAsImportant: true
+            - subject: '[Failed] OR [Still Failing] OR [Fixed]'
+              shouldAlwaysMarkAsImportant: true
+    -
+        label: Boston Office
+        match:
+            to: office@dimagi.com
+        filters:
+            - label: Office
+    -
+        label: Cape Town Office
+        match:
+            to: capetown@dimagi.com
+        filters:
+            - label: Office
+    -
+        label: CommCare Users
+        options:
+            - archive
+        match:
+            to: commcare-users@googlegroups.com
+        filters:
+            - label: CommCare Users
+    -
+        label: From a Dimagi person
+        match:
+            from: "*@dimagi.com -commcarehq -fogbugz -devops -notifications -ops"
+        filters:
+            - label: ♥︎
+    -
+        label: Project Reports
+        match:
+            to: project-reports@dimagi.com
+        filters:
+            - label: Project Reports
+    -
+        label: Field Reports
+        match:
+            to: field-reports@dimagi.com
+        filters:
+            - label: Field Reports
+    -
+        label: Field Dev
+        match:
+            to: field-dev@googlegroups.com
+        filters:
+            - label: Field Dev
+    -
+        label: DevOps
+        options:
+            - archive
+        match:
+            hasTheWord: "list:'devops.dimagi.com'"
+        filters:
+            - label: DevOps
+    -
+        label: Trello
+        match:
+            from: do-not-reply@trello.com
+        filters:
+            - label: Trello
+    -
+        label: GitHub
+        match:
+            from: notifications@github.com
+        filters:
+            - label: GitHub
+              to: me
+              shouldAlwaysMarkAsImportant: true
+            - to: -me
+              shouldNeverMarkAsImportant: true
+    -
+        label: Information
+        options:
+          - keywords
+        match:
+            to: "information@dimagi.com OR info@dimagi.com"
+        filters:
+            - label: Information
+            - doesNotHaveTheWord: '{% for keyword in keywords %}"{{ keyword }}" {% endfor %}'
+    -
+        label: Allstaff
+        match:
+            to: allstaff@dimagi.com
+        filters:
+            - label: Allstaff

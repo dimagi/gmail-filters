@@ -14,7 +14,7 @@ def index():
 
 @bottle.route('/filters.json')
 def filters_json():
-    with open('gmailfilterrecipes/tests/available-filters.yml') as f:
+    with open('recipesets/default.yml') as f:
         filters = yaml.load(f)
     user_recipe_set = UserRecipeSet.from_recipe_set(RecipeSet.wrap(filters))
     return json.dumps(user_recipe_set.to_json())
