@@ -75,7 +75,7 @@ class UserRecipeSet(RecipeSet):
         options_by_key = {option.key: option for option in recipe_set.options}
 
         def get_default_value(type):
-            return {'inverted-bool': lambda: True, 'list': list}[type]()
+            return {'inverted-bool': lambda: True, 'list': list, 'bool': lambda: False}[type]()
         return UserRecipeSet(
             id_prefix=recipe_set.id_prefix,
             recipes=[

@@ -60,6 +60,10 @@
                       <input id="option-{{ recipe.id }}-{{ $index }}"
                              type="checkbox" ng-model="option.value" ng-true-value="false" ng-false-value="true"/>
                     </span>
+                    <span ng-if="option.type == 'bool'">
+                      <input id="option-{{ recipe.id }}-{{ $index }}"
+                             type="checkbox" ng-model="option.value" ng-true-value="true" ng-false-value="false"/>
+                    </span>
                     <label for="option-{{ recipe.id }}-{{ $index }}">{{ option.label }}</label>
                     <span ng-if="option.type == 'list'">
                       <input id="option-{{ recipe.id }}-{{ $index }}" type="text" ng-model="option.value" ng-list/>
