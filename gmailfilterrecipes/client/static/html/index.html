@@ -67,6 +67,7 @@
                     <label for="option-{{ recipe.id }}-{{ $index }}">{{ option.label }}</label>
                     <span ng-if="option.type == 'list'">
                       <input id="option-{{ recipe.id }}-{{ $index }}" type="text" ng-model="option.value" ng-list/>
+                        <span class="glyphicon glyphicon-info-sign" title="Comma-separated list"></span>
                     </span>
                   </li>
                 </ul>
