@@ -75,14 +75,14 @@ class UserRecipeSet(RecipeSet):
         options_by_key = {option.key: option for option in recipe_set.options}
 
         def get_default_value(type):
-            return {'inverted-bool': lambda: True, 'list': list}[type]()
+            return {'inverted-bool': lambda: True, 'list': list, 'bool': lambda: False}[type]()
         return UserRecipeSet(
             id_prefix=recipe_set.id_prefix,
             recipes=[
                 UserRecipe(
                     selected=True,
                     label=recipe.label,
-                    id=recipe.id,
+                    id=recipe.id or "{0:06d}".format(i),
                     options=[
                         UserRecipeOption(value=get_default_value(option.type),
                                          **option.to_json())
@@ -93,6 +93,6 @@ class UserRecipeSet(RecipeSet):
                     ],
                     match=recipe.match,
                     filters=recipe.filters,
-                ) for recipe in recipe_set.recipes
+                ) for i, recipe in enumerate(recipe_set.recipes)
             ],
         )

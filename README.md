@@ -1,5 +1,8 @@
 # Gmail Filters
 
+Python library and simple web app for creating GMail filters.
+
+See [GMail help](https://support.google.com/mail/answer/6579) for info on importing filters into GMail.
 
 ## Install
 
