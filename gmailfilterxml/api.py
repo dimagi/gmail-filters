@@ -11,6 +11,7 @@ PROPERTIES = (
     ('shouldMarkAsRead', bool),
     ('shouldNeverSpam', bool),
     ('shouldAlwaysMarkAsImportant', bool),
+    ('shouldNeverMarkAsImportant', bool),
 )
 
 

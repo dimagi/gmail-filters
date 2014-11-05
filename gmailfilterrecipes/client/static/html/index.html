@@ -10,6 +10,29 @@
         <h1>Gmail Filters</h1>
       </div>
       <div class="row">
+          <div class="col-md-12">
+              <a href="#" ng-click="showRecipe()" ng-hide="show">Show Recipe Source</a>
+              <form class="form-horizontal" ng-show="show">
+                  <div class="form-group">
+                    <label for="recipeSet" class="col-sm-2 control-label">Recipe JSON</label>
+                    <div class="col-sm-10">
+                      <textarea id="recipeSet" class="form-control" rows="5" cols="25" ng-model="recipeSetJson"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10 btn-group">
+                      <button class="btn btn-default" ng-click="updateForm()">
+                          <span class="glyphicon glyphicon-arrow-down"></span> Update Form
+                      </button>
+                      <button class="btn btn-default" ng-click="updateRecipe()">
+                          Update Recipe <span class="glyphicon glyphicon-arrow-up"></span>
+                      </button>
+                    </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <div class="row">
         <div class="col-md-12">
           <table class="table table-bordered table-striped">
             <tr>
@@ -37,9 +60,14 @@
                       <input id="option-{{ recipe.id }}-{{ $index }}"
                              type="checkbox" ng-model="option.value" ng-true-value="false" ng-false-value="true"/>
                     </span>
+                    <span ng-if="option.type == 'bool'">
+                      <input id="option-{{ recipe.id }}-{{ $index }}"
+                             type="checkbox" ng-model="option.value" ng-true-value="true" ng-false-value="false"/>
+                    </span>
                     <label for="option-{{ recipe.id }}-{{ $index }}">{{ option.label }}</label>
                     <span ng-if="option.type == 'list'">
                       <input id="option-{{ recipe.id }}-{{ $index }}" type="text" ng-model="option.value" ng-list/>
+                        <span class="glyphicon glyphicon-info-sign" title="Comma-separated list"></span>
                     </span>
                   </li>
                 </ul>
