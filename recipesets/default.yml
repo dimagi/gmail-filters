@@ -177,6 +177,12 @@ recipes:
             - to: -me
               shouldNeverMarkAsImportant: true
     -
+        label: Ignore Dimagimon
+        filters:
+            - from: dimagimon
+              to: -me
+              shouldArchive: true
+    -
         label: Information
         options:
           - keywords
