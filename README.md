@@ -30,6 +30,43 @@ python run_server.py
 
 and the web frontend should be running at http://localhost:8080/.
 
+## Configure your recipeset
+
+Each organization or team within an organization will have a different set of filters that are relevant to them;
+each member of that team may then want to further tweak the base set to conform to their particular needs. For example,
+everyone may want a basic filter labeling emails that contain their name, but each person's name is different, so each person's
+filter must be tweaked accordingly.
+
+In this framework, the shared filter descriptions are codified as "recipe sets", which are then displayed to the individual through
+a web interface, so that they may customize it to themself by simply filling out a web form.
+
+An example recipe set (which is used by the dev team at Dimagi) is included in this repo at `recipesets/default.yml`.
+To use your own instead, simply change the `gmailfilterrecipes.filters_yml` option in `settings.ini` to point to your own.
+
+A recipeset yaml file has two toplevel components, `options` and `recipes`: `options` let you specify filter options that can be shared
+across all your recipes, which are then defined under `recipes`. A recipe looks somethin like this:
+
+```yaml
+    -
+        label: Mails directly to me
+        custom_options:
+            -
+                key: names
+                label: "List your email addresses"
+                type: list
+        match:
+            to: "{{ names|join(' OR ') }}"
+        filters:
+            - label: =^.^=
+              shouldNeverSpam: true
+              shouldAlwaysMarkAsImportant: true
+```
+
+Each recipe specifies a row in the web form that will be shown to the individual. In this case, that row would be labelled
+"Mails directly to me", they would require the individual to specify a list of email addresses (could also be just a single one),
+and would create a filter that matches on those emails, applies a gmail label named "=^.^=", keeps it from going to spam,
+and marks it as important.
+
 ## Library Usage
 
 If you aren't interested in the front end, you can use `gmailfilterxml`
